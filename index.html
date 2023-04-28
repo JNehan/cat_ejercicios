@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Examen práctico: CAT</title>
+        <style >
+            .leaderboard {
+                max-width: 490px;
+                width: 100%;
+                border-radius: 12px;
+            }
+            .leaderboard header {
+                --start: 15%;
+                height: 130px;
+                background-image: repeating-radial-gradient(circle at var(--start), transparent 0%, transparent 10%, rgba(54, 89, 219, 0.33) 10%, rgba(54, 89, 219, 0.33) 17%), linear-gradient(to right, #5b7cfa, #3659db);
+                color: #fff;
+                position: relative;
+                border-radius: 12px 12px 0 0;
+                overflow: hidden;
+            }
+            .leaderboard header .leaderboard__title {
+                position: absolute;
+                z-index: 2;
+                top: 50%;
+                right: calc(var(--start) * .75);
+                transform: translateY(-50%);
+                text-transform: uppercase;
+                margin: 0;
+            }
+            .leaderboard header .leaderboard__title span {
+                display: block;
+            }
+            .leaderboard header .leaderboard__title--top {
+                font-size: 24px;
+                font-weight: 700;
+                letter-spacing: 6.5px;
+            }
+            .leaderboard header .leaderboard__title--bottom {
+                font-size: 13px;
+                font-weight: 500;
+                letter-spacing: 3.55px;
+                opacity: 0.65;
+                transform: translateY(-2px);
+            }
+            .leaderboard header .leaderboard__icon {
+                fill: #fff;
+                opacity: 0.35;
+                width: 50px;
+                position: absolute;
+                top: 50%;
+                left: var(--start);
+                transform: translate(-50%, -50%);
+            }
+            .leaderboard__profiles {
+                background-color: #fff;
+                border-radius: 0 0 12px 12px;
+                padding: 15px 15px 20px;
+                display: grid;
+                row-gap: 8px;
+            }
+            .leaderboard__profile {
+                display: grid;
+                grid-template-columns: 1fr 3fr 1fr;
+                align-items: center;
+                padding: 10px 30px 10px 10px;
+                overflow: hidden;
+                border-radius: 10px;
+                box-shadow: 0 5px 7px -1px rgba(51, 51, 51, 0.23);
+                cursor: pointer;
+                transition: transform 0.25s cubic-bezier(0.7, 0.98, 0.86, 0.98), box-shadow 0.25s cubic-bezier(0.7, 0.98, 0.86, 0.98);
+                background-color: #fff;
+            }
+            .leaderboard__profile:hover {
+                transform: scale(1.2);
+                box-shadow: 0 9px 47px 11px rgba(51, 51, 51, 0.18);
+            }
+            .leaderboard__picture {
+                max-width: 100%;
+                width: 60px;
+                border-radius: 50%;
+                box-shadow: 0 0 0 10px #ebeef3, 0 0 0 22px #f3f4f6;
+            }
+            .leaderboard__name {
+                color: #35d8ac;
+                font-weight: 600;
+                font-size: 20px;
+                letter-spacing: 0.64px;
+                margin-left: 12px;
+            }
+            .leaderboard__value {
+                color: #35d8ac;
+                font-weight: 700;
+                font-size: 34px;
+                text-align: right;
+            }
+            .leaderboard__value > span {
+                opacity: 0.8;
+                font-weight: 600;
+                font-size: 13px;
+                margin-left: 3px;
+            }
+            body {
+                margin: 0;
+                background-color: #f3f4f661;
+                display: grid;
+                height: 100vh;
+                place-items: center;
+                font-family: "Source Sans Pro", sans-serif;
+            }
+            .leaderboard {
+                box-shadow: 0 0 40px -10px rgba(0, 0, 0, 0.4);
+            }
+            a{
+                text-decoration:none;
+            }
+            svg{
+                filter:invert(100%);
+            }
+        </style>
+    </head>
+    <body>
+
+        <article class="leaderboard">
+            <header>
+
+                <svg version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 24 24" style="enable-background:new 0 0 511.999 511.999;" fill="none" xmlns="http://www.w3.org/2000/svg" class="leaderboard__icon">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M9.29289 1.29289C9.48043 1.10536 9.73478 1 10 1H18C19.6569 1 21 2.34315 21 4V9C21 9.55228 20.5523 10 20 10C19.4477 10 19 9.55228 19 9V4C19 3.44772 18.5523 3 18 3H11V8C11 8.55228 10.5523 9 10 9H5V20C5 20.5523 5.44772 21 6 21H9C9.55228 21 10 21.4477 10 22C10 22.5523 9.55228 23 9 23H6C4.34315 23 3 21.6569 3 20V8C3 7.73478 3.10536 7.48043 3.29289 7.29289L9.29289 1.29289ZM6.41421 7H9V4.41421L6.41421 7ZM18.7071 12.2929L22.7071 16.2929C23.0976 16.6834 23.0976 17.3166 22.7071 17.7071L18.7071 21.7071C18.3166 22.0976 17.6834 22.0976 17.2929 21.7071C16.9024 21.3166 16.9024 20.6834 17.2929 20.2929L20.5858 17L17.2929 13.7071C16.9024 13.3166 16.9024 12.6834 17.2929 12.2929C17.6834 11.9024 18.3166 11.9024 18.7071 12.2929ZM14.7071 13.7071C15.0976 13.3166 15.0976 12.6834 14.7071 12.2929C14.3166 11.9024 13.6834 11.9024 13.2929 12.2929L9.29289 16.2929C8.90237 16.6834 8.90237 17.3166 9.29289 17.7071L13.2929 21.7071C13.6834 22.0976 14.3166 22.0976 14.7071 21.7071C15.0976 21.3166 15.0976 20.6834 14.7071 20.2929L11.4142 17L14.7071 13.7071Z" fill="#000000"/>
+                </svg>
+          
+                <h1 class="leaderboard__title">
+                    <span class="leaderboard__title--top">Listado</span>
+                    <span class="leaderboard__title--bottom">examen práctico</span>
+                </h1>
+            </header>
+            
+            <main class="leaderboard__profiles">
+                <a href="/web_fs_1">
+                    <article class="leaderboard__profile">
+                        
+                            <img src="/1.png" alt="1" class="leaderboard__picture">
+                            <span class="leaderboard__name">Maquetar Demo</span>
+                    
+                    </article>
+                </a>
+                <a href="/web_fs_2">
+                    <article class="leaderboard__profile">
+                        <img src="/2.png" alt="2" class="leaderboard__picture">
+                        <span class="leaderboard__name">Consumir API en Javascript</span>
+                    </article>
+                </a>
+                <a href="/web_fs_3">
+                    <article class="leaderboard__profile">
+                        <img src="/3.png" alt="3" class="leaderboard__picture">
+                        <span class="leaderboard__name">CRUD PHP: formulario que cotice un traslado</span>
+                      </article>
+                </a>
+
+            </main>
+          
+          
+          </article>
+
+        <footer></footer>
+        
+    </body>
+</html>
