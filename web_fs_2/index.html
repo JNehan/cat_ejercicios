@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Ejercicio 2: Consumir API a través de vanilla Javascript</title>
+
+        <link rel="stylesheet" href="/web_fs_2/css/style.css">
+        <link rel="stylesheet" href="/web_fs_2/css/theme.css">
+        <link rel="stylesheet" href="/web_fs_2/css/fontawesome-5-all.css">
+        <link rel="stylesheet" href="/web_fs_2/css/icon-font.css">
+
+    </head>
+    <body>
+
+        <div class="app">
+            <div class="header">
+                <div class="clearfix">
+                    <a href="#navi" class="pull-left">
+                        <i class="fas fa-code" onclick="showListType()"></i>
+                    </a>
+                  
+                    <select id="OrderSelect">
+                        <option value="">pokeapi.co</option>
+                        <option value="asc">Ascendente</option>
+                        <option value="des">Desencante</option>
+                    </select>
+                   
+                    <span class="title"></span>
+                    <a href="#" class="pull-right">
+                        <i class="fas fa-dice" id="ChangeGrid"></i>
+                    </a> 
+                </div>
+            </div>
+            
+            <div class="list " id="ListBox">
+                <div class="list-content">
+                    <div class="list-wrap" id="ListWrap"></div>
+                </div>
+            
+                <div class="list-pokemon" id="ListPokemon"></div>
+            
+            </div>
+
+            <div id="BaseType" style="display:none;">
+                <div class="api-types" >
+                    <div class="statistic-wrap">
+                        <div class="head type-name"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="BasePoke" style="display:none;">
+                <div class="api-poke" ></div>
+            </div>
+
+            <div id="TempTypes" class="hidden">[]</div>
+            <div id="TempPokemon" class="hidden">[]</div>
+            <div id="ActiveList" class="hidden"></div>
+        
+            <script src="/web_fs_2/js/theme.js"></script>
+            
+    </body>
+</html>
